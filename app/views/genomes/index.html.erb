@@ -11,9 +11,8 @@
 
 <% @genomes.each do |genome| %>
   <tr>
-    <td><%= genome.organism %></td>
+    <td><%= link_to(genome.organism, genome) %></td>
     <td><%= genome.version %></td>
-    <td><%= link_to 'Show', genome %></td>
     <td><%= link_to 'Edit', edit_genome_path(genome) %></td>
     <td><%= link_to 'Destroy', genome, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130115205010) do
+ActiveRecord::Schema.define(:version => 20130115210036) do
 
   create_table "genomes", :force => true do |t|
     t.string   "organism"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20130115205010) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "slug"
+    t.string   "key"
   end
 
   add_index "genomes", ["slug"], :name => "index_genomes_on_slug", :unique => true

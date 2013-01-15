@@ -1,3 +1,14 @@
 class Genome < ActiveRecord::Base
-  attr_accessible :organism, :version
+  extend FriendlyId
+  friendly_id :key, use: :slugged
+
+  attr_accessible :organism, :version, :key
+
+  validates_presence_of :organism, :version
+
+  before_save :create_key
+
+  def create_key
+    self.key = self.organism.gsub(".","_") + "_" + self.version.gsub(".","_")
+  end
 end
