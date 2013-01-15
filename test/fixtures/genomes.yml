@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  organism: MyString
+  version: MyString
+
+two:
+  organism: MyString
+  version: MyString
