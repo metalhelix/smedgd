@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130115210036) do
+ActiveRecord::Schema.define(:version => 20130117214712) do
+
+  create_table "genes", :force => true do |t|
+    t.string   "name"
+    t.string   "type"
+    t.integer  "location_id"
+    t.string   "link"
+    t.integer  "genome_id"
+    t.string   "slug"
+    t.string   "standard_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "genes", ["slug"], :name => "index_genes_on_slug", :unique => true
 
   create_table "genomes", :force => true do |t|
     t.string   "organism"
@@ -23,5 +37,28 @@ ActiveRecord::Schema.define(:version => 20130115210036) do
   end
 
   add_index "genomes", ["slug"], :name => "index_genomes_on_slug", :unique => true
+
+  create_table "locations", :force => true do |t|
+    t.string   "sequence_name"
+    t.string   "sequence_type"
+    t.integer  "start"
+    t.integer  "stop"
+    t.integer  "strand"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "transcripts", :force => true do |t|
+    t.integer  "location_id"
+    t.integer  "gene_id"
+    t.text     "sequence_aa"
+    t.text     "sequence_nuc"
+    t.string   "name"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "slug"
+  end
+
+  add_index "transcripts", ["slug"], :name => "index_transcripts_on_slug", :unique => true
 
 end

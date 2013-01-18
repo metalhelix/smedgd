@@ -1,0 +1,73 @@
+<% if !params[:search] %>
+<%= form_tag genes_path, :method => 'get' do %>
+  <fieldset>
+    <legend>Seach By Name</legend>
+    <label>Name</label>
+    <%= text_field_tag :search, params[:search] %>
+    <%= hidden_field_tag :search_type, 'name' %>
+    <span class="help-block">Example block-level help text here.</span>
+    <%# <label class="checkbox">%>
+    <%#   <input type="checkbox"> Check me out%>
+    <%# </label>%>
+    <button type="submit" class="btn">Search</button>
+  </fieldset>
+<% end %>
+
+<%= form_tag genes_path, :method => 'get' do %>
+  <fieldset>
+    <legend>Seach By Protein Homology</legend>
+    <label>GO Term</label>
+    <%= text_field_tag :search, params[:search] %>
+    <%= hidden_field_tag :search_type, 'homology' %>
+    <span class="help-block">Example block-level help text here.</span>
+    <%# <label class="checkbox">%>
+    <%#   <input type="checkbox"> Check me out%>
+    <%# </label>%>
+    <button type="submit" class="btn">Search</button>
+  </fieldset>
+<% end %>
+
+<%= form_tag genes_path, :method => 'get' do %>
+  <fieldset>
+    <legend>Seach By GO Term</legend>
+    <label>GO Term</label>
+    <%= text_field_tag :search, params[:search] %>
+    <%= hidden_field_tag :search_type, 'go' %>
+    <span class="help-block">Example block-level help text here.</span>
+    <%# <label class="checkbox">%>
+    <%#   <input type="checkbox"> Check me out%>
+    <%# </label>%>
+    <button type="submit" class="btn">Search</button>
+  </fieldset>
+<% end %>
+<% else %>
+  <%= link_to 'back', genes_path %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Location</th>
+    <th>Link</th>
+    <th>Genome</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @genes.each do |gene| %>
+  <tr>
+    <td><%= gene.name %></td>
+    <td><%= gene.type %></td>
+    <td><%= gene.link %></td>
+    <td><%= link_to 'Show', gene %></td>
+    <td><%= link_to 'Edit', edit_gene_path(gene) %></td>
+    <td><%= link_to 'Destroy', gene, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<% end %>
+<%= link_to 'New Gene', new_gene_path %>

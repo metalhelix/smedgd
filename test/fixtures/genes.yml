@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  type: 
+  location_id: 1
+  link: MyString
+  genome_id: 1
+  slug: MyString
+  standard_id: MyString
+
+two:
+  name: MyString
+  type: 
+  location_id: 1
+  link: MyString
+  genome_id: 1
+  slug: MyString
+  standard_id: MyString

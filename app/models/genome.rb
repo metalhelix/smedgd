@@ -2,6 +2,8 @@ class Genome < ActiveRecord::Base
   extend FriendlyId
   friendly_id :key, use: :slugged
 
+  has_many :genes
+
   attr_accessible :organism, :version, :key
 
   validates_presence_of :organism, :version

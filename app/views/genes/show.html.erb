@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @gene.name %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @gene.type %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @gene.location_id %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @gene.link %>
+</p>
+
+<p>
+  <b>Genome:</b>
+  <%= @gene.genome_id %>
+</p>
+
+<p>
+  <b>Slug:</b>
+  <%= @gene.slug %>
+</p>
+
+<p>
+  <b>Standard:</b>
+  <%= @gene.standard_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_gene_path(@gene) %> |
+<%= link_to 'Back', genes_path %>

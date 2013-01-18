@@ -1,16 +1,16 @@
-<%= link_to "smedgd", root_path, :class => 'brand' %>
+<%= link_to "smedgd", root_path, :class => 'brand', :id => 'top_logo' %>
 <ul class="nav">
     <li>
-    <%= link_to('browse') %>
+    <%= link_to('gbrowse') %>
     </li>
     <li>
-    <%= link_to('search') %>
+    <%= link_to('search', genes_path) %>
     </li>
     <li>
     <%= link_to('blast') %>
     </li>
     <li>
-    <%= link_to('download') %>
+    <%= link_to('download', page_path('download')) %>
     </li>
     <li>
     <%= link_to('interactome') %>

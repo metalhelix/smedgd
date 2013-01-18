@@ -1,4 +1,13 @@
 Smedgd::Application.routes.draw do
+  resources :transcripts
+
+
+  resources :locations
+
+
+  resources :genes
+
+
   resources :genomes
 
 

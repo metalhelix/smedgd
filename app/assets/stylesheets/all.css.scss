@@ -5,6 +5,16 @@ body {
   height: 100%;
 }  
 
+
+.brand
+{
+  background: url('/assets/logo.png') no-repeat left center;
+  height: 20px;
+  width: 130px;
+  text-align: right;
+}
+
+
 #wrap {
   min-height: 100%;
   height: auto !important;
