@@ -1,4 +1,4 @@
-class Gene < ActiveRecord::Base
+class Feature < ActiveRecord::Base
   extend FriendlyId
   friendly_id :standard_id, use: :slugged
 

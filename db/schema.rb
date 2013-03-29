@@ -11,9 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130117214712) do
+ActiveRecord::Schema.define(:version => 20130329163033) do
 
-  create_table "genes", :force => true do |t|
+  create_table "features", :force => true do |t|
     t.string   "name"
     t.string   "type"
     t.integer  "location_id"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20130117214712) do
     t.datetime "updated_at",  :null => false
   end
 
-  add_index "genes", ["slug"], :name => "index_genes_on_slug", :unique => true
+  add_index "features", ["slug"], :name => "index_features_on_slug", :unique => true
 
   create_table "genomes", :force => true do |t|
     t.string   "organism"

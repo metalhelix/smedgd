@@ -5,7 +5,7 @@ Smedgd::Application.routes.draw do
   resources :locations
 
 
-  resources :genes
+  resources :features
 
 
   resources :genomes
