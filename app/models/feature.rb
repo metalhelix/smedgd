@@ -5,6 +5,8 @@ class Feature < ActiveRecord::Base
   belongs_to :genome
   has_one :location
   has_many :transcripts
+  has_many :annotations
+  has_many :attributes
 
   accepts_nested_attributes_for :location
   accepts_nested_attributes_for :transcripts

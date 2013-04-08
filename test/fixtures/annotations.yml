@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  gene_id: 1
+  type: 
+  score: 1.5
+  value: MyString
+  description: MyText
+  source_id: 1
+
+two:
+  gene_id: 1
+  type: 
+  score: 1.5
+  value: MyString
+  description: MyText
+  source_id: 1

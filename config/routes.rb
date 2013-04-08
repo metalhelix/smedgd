@@ -1,4 +1,7 @@
 Smedgd::Application.routes.draw do
+  resources :annotations
+
+
   resources :transcripts
 
 

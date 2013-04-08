@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  name: MyString
+  value: 1.5
+  source: 
+
+two:
+  type: 
+  name: MyString
+  value: 1.5
+  source: 
