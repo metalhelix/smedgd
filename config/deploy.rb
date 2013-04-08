@@ -1,7 +1,8 @@
 require 'bundler/capistrano'
 
 set :application, 'smedgd'
-set :repository, 'git@github.com:metalhelix/smedgd.git'
+# set :repository, 'git@github.com:metalhelix/smedgd.git'
+set :repository, 'git://github.com/metalhelix/smedgd.git'
 
 set :domain, 'smedgdkc03'
 
