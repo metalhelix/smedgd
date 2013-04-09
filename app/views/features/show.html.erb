@@ -7,34 +7,28 @@
 
 <p>
   <b>Type:</b>
-  <%= @feature.type %>
+  <%= @feature.category %>
 </p>
 
-<p>
-  <b>Location:</b>
-  <%= @feature.location_id %>
-</p>
+<% if @feature.transcripts.size > 0 %>
+  <p>
+  <b>Transcript:</b>
+  <%= @feature.transcripts %>
+  </p>
 
-<p>
-  <b>Link:</b>
-  <%= @feature.link %>
-</p>
+<% end %>
 
 <p>
   <b>Genome:</b>
-  <%= @feature.genome_id %>
+  <%= @feature.genome.organism %>
 </p>
 
-<p>
-  <b>Slug:</b>
-  <%= @feature.slug %>
-</p>
 
-<p>
-  <b>Standard:</b>
-  <%= @feature.standard_id %>
-</p>
+  <h2>Annotations</h2>
 
+  <%= render :partial => 'annotations/annotation', :collection => @feature.annotations %>
+
+  <br/><br/>
 
 <%= link_to 'Edit', edit_feature_path(@feature) %> |
 <%= link_to 'Back', features_path %>

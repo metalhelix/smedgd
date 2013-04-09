@@ -1,5 +1,5 @@
 class Transcript < ActiveRecord::Base
-  belongs_to :gene
+  belongs_to :feature
   has_one :location
 
   accepts_nested_attributes_for :location

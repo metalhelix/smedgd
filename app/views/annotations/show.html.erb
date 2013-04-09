@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Gene:</b>
-  <%= @annotation.gene_id %>
+  <b>Feature:</b>
+  <%= link_to @annotation.feature.name, @annotation.feature %>
 </p>
 
 <p>
   <b>Type:</b>
-  <%= @annotation.type %>
+  <%= @annotation.category %>
 </p>
 
 <p>

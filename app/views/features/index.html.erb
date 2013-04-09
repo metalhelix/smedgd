@@ -5,7 +5,7 @@
     <label>Name</label>
     <%= text_field_tag :search, params[:search] %>
     <%= hidden_field_tag :search_type, 'name' %>
-    <span class="help-block">Example block-level help text here.</span>
+    <span class="help-block">Example: <i>SmedSXL_028951</i></span>
     <%# <label class="checkbox">%>
     <%#   <input type="checkbox"> Check me out%>
     <%# </label>%>
@@ -16,14 +16,14 @@
 <%= form_tag features_path, :method => 'get' do %>
   <fieldset>
     <legend>Seach By Protein Homology</legend>
-    <label>GO Term</label>
+    <label>Protein Homology</label>
     <%= text_field_tag :search, params[:search] %>
     <%= hidden_field_tag :search_type, 'homology' %>
-    <span class="help-block">Example block-level help text here.</span>
+    <span class="help-block">Example: <i>???</i> </span>
     <%# <label class="checkbox">%>
     <%#   <input type="checkbox"> Check me out%>
     <%# </label>%>
-    <button type="submit" class="btn">Search</button>
+    <button type="submit" class="btn disabled">Search</button>
   </fieldset>
 <% end %>
 
@@ -33,41 +33,41 @@
     <label>GO Term</label>
     <%= text_field_tag :search, params[:search] %>
     <%= hidden_field_tag :search_type, 'go' %>
-    <span class="help-block">Example block-level help text here.</span>
+    <span class="help-block">Example: <i>brain</i> </span>
     <%# <label class="checkbox">%>
     <%#   <input type="checkbox"> Check me out%>
     <%# </label>%>
-    <button type="submit" class="btn">Search</button>
+    <button type="submit" class="btn disabled">Search</button>
   </fieldset>
 <% end %>
 <% else %>
-  <%= link_to 'back', features_path %>
+  <%= link_to 'restart', features_path, :class => 'btn' %>
 
-<table>
+  <br/><br/>
+
+  <% if @features.size > 0 %>
+<table class='table'>
   <tr>
     <th>Name</th>
-    <th>Type</th>
-    <th>Location</th>
-    <th>Link</th>
     <th>Genome</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @features.each do |feature| %>
   <tr>
-    <td><%= feature.name %></td>
-    <td><%= feature.type %></td>
-    <td><%= feature.link %></td>
-    <td><%= link_to 'Show', feature %></td>
-    <td><%= link_to 'Edit', edit_feature_path(feature) %></td>
-    <td><%= link_to 'Destroy', feature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to feature.name, feature %></td>
+    <td><%= feature.genome.organism %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
+<% else %>
+
+  <p class='warning'>No results found</p>
+
+  <%= link_to 'try again', features_path %>
 
 <% end %>
+
+<% end %>
+<br /> <br/>
 <%= link_to 'New feature', new_feature_path %>

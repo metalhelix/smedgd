@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130329184007) do
+ActiveRecord::Schema.define(:version => 20130409202322) do
 
   create_table "annotations", :force => true do |t|
     t.integer  "feature_id"
-    t.string   "type"
+    t.string   "category"
     t.float    "score"
     t.string   "value"
     t.text     "description"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20130329184007) do
   end
 
   create_table "attributes", :force => true do |t|
-    t.string   "type"
+    t.string   "category"
     t.string   "name"
     t.float    "value"
     t.string   "source_id"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(:version => 20130329184007) do
     t.string   "name"
     t.string   "version"
     t.string   "url"
-    t.string   "type"
+    t.string   "category"
     t.string   "organism"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -46,14 +46,14 @@ ActiveRecord::Schema.define(:version => 20130329184007) do
 
   create_table "features", :force => true do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "category"
     t.integer  "location_id"
     t.string   "link"
     t.integer  "genome_id"
     t.string   "slug"
-    t.string   "standard_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "standard_name"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   add_index "features", ["slug"], :name => "index_features_on_slug", :unique => true
@@ -61,10 +61,10 @@ ActiveRecord::Schema.define(:version => 20130329184007) do
   create_table "genomes", :force => true do |t|
     t.string   "organism"
     t.string   "version"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.string   "slug"
-    t.string   "key"
+    t.string   "unique_name"
   end
 
   add_index "genomes", ["slug"], :name => "index_genomes_on_slug", :unique => true
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(:version => 20130329184007) do
 
   create_table "transcripts", :force => true do |t|
     t.integer  "location_id"
-    t.integer  "gene_id"
+    t.integer  "feature_id"
     t.text     "sequence_aa"
     t.text     "sequence_nuc"
     t.string   "name"
