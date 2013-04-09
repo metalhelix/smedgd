@@ -6,6 +6,9 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'mysql2'
+gem 'rb-readline'
+
 
 
 # Gems used only for assets and not required
@@ -17,6 +20,7 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
 end
