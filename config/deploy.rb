@@ -25,6 +25,8 @@ role :web, domain
 role :app, domain
 role :db,  domain, :primary => true
 
+after 'deploy:update_code', 'deploy:symlink_db'
+
 namespace :deploy do
   task :start do
   end
@@ -34,6 +36,11 @@ namespace :deploy do
 
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+  end
+
+  desc "Symlinks the database.yml"
+  task :symlink_db, :roles => :app do
+    run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
   end
 end
 
