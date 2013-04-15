@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130409202322) do
+ActiveRecord::Schema.define(:version => 20130415205436) do
 
   create_table "annotations", :force => true do |t|
     t.integer  "feature_id"
@@ -24,16 +24,6 @@ ActiveRecord::Schema.define(:version => 20130409202322) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "attributes", :force => true do |t|
-    t.string   "category"
-    t.string   "name"
-    t.float    "value"
-    t.string   "source_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "feature_id"
-  end
-
   create_table "data_sets", :force => true do |t|
     t.string   "name"
     t.string   "version"
@@ -42,6 +32,16 @@ ActiveRecord::Schema.define(:version => 20130409202322) do
     t.string   "organism"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "feature_attributes", :force => true do |t|
+    t.string   "category"
+    t.string   "name"
+    t.float    "value"
+    t.string   "source_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "feature_id"
   end
 
   create_table "features", :force => true do |t|

@@ -6,7 +6,7 @@ class Feature < ActiveRecord::Base
   # has_one :location
   has_many :transcripts
   has_many :annotations
-  has_many :feature_attributes, :class_name => 'Attribute'
+  has_many :feature_attributes
 
   # accepts_nested_attributes_for :location
   accepts_nested_attributes_for :transcripts
