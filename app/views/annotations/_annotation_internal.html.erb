@@ -1,0 +1,14 @@
+<div class="annotation_set" id="internal_link">
+<h3>Asexual Similar</h3>
+<table class="table annotation_table">
+  <thead>
+    <tr><th>Name</th><th>Rank</th></tr>
+  </thead>
+  <% annotations.each do |annotation| %>
+    <tr>
+      <td><%= annotation.value %></td>
+      <td><%= annotation.score %></td>
+    </tr>
+  <% end %>
+</table>
+</div>

@@ -15,6 +15,13 @@ class FeaturesController < ApplicationController
   def show
     @feature = Feature.find(params[:id])
 
+    @annotations = {}
+
+    @feature.annotations.each do |a|
+      @annotations[a.category] ||= []
+      @annotations[a.category] << a
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @feature }

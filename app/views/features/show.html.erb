@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
-  <%= @feature.name %>
+<b>Name:</b>
+<%= @feature.name %>
 </p>
 
 <p>
-  <b>Type:</b>
-  <%= @feature.category %>
+<b>Type:</b>
+<%= @feature.category %>
+</p>
+
+<p>
+  <b>Genome:</b>
+  <%= @feature.genome.organism %>
 </p>
 
 <% if @feature.transcripts.size > 0 %>
@@ -18,17 +23,11 @@
 
 <% end %>
 
-<p>
-  <b>Genome:</b>
-  <%= @feature.genome.organism %>
-</p>
+<h2>Annotations</h2>
 
+<%= render :partial => 'annotations/annotations', :locals => {:annotations => @annotations} %>
 
-  <h2>Annotations</h2>
-
-  <%= render :partial => 'annotations/annotation', :collection => @feature.annotations %>
-
-  <br/><br/>
+<br/><br/>
 
 <%= link_to 'Edit', edit_feature_path(@feature) %> |
 <%= link_to 'Back', features_path %>

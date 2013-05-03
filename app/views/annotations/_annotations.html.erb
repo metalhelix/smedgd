@@ -1,0 +1,16 @@
+<div id="annotations">
+<% annotations.each do |type, anns| %>
+  <% case type %>
+  <% when "protein_homology" %>
+    <%= render :partial => 'annotations/annotation_protein_homology', :locals => {:annotations => anns} %>
+  <% when "ncbi_annotation" %>
+    <%= render :partial => 'annotations/annotation_internal', :locals => {:annotations => anns} %>
+  <% when "go_term" %>
+    <%= render :partial => 'annotations/annotation_go', :locals => {:annotations => anns} %>
+  <% when "pfam" %>
+    <%= render :partial => 'annotations/annotation_pfam', :locals => {:annotations => anns} %>
+  <% else %>
+    <%= render :partial => 'annotations/annotation_default', :collection => anns, :as => :annotation %>
+  <% end %>
+<% end %>
+</div>
