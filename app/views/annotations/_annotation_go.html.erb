@@ -1,14 +1,20 @@
 <div class="annotation_set" id="go_terms">
-  <h3>GO Terms</h3>
-<table class="table annotation_table">
-  <thead>
-    <tr><th>Term</th><th>ID</th></tr>
-  </thead>
-  <% annotations.each do |annotation| %>
-    <tr>
-      <td><%= link_to_go(annotation.description, annotation.value) %></td>
-      <td><%= annotation.value %></td>
-    </tr>
-  <% end %>
-</table>
+  <h3><i class="icon-chevron-up"></i> GO Terms</h3>
+  <table class="table annotation_table">
+    <thead>
+      <tr>
+        <th>Term</th>
+        <th>ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% annotations.each do |annotation| %>
+        <tr>
+          <td><%= link_to_go(annotation.description, annotation.value) %></td>
+          <td><%= annotation.value %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
+

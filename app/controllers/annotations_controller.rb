@@ -2,7 +2,7 @@ class AnnotationsController < ApplicationController
   # GET /annotations
   # GET /annotations.json
   def index
-    @annotations = Annotation.all
+    @annotations = Annotation.search(params[:search], params[:search_type]).limit(100)
 
     respond_to do |format|
       format.html # index.html.erb

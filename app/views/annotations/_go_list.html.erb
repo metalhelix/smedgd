@@ -1,0 +1,18 @@
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Term</th>
+      <th>Term ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% annotations.each do |annotation| %>
+      <tr>
+        <td><%= link_to annotation.feature.name, annotation.feature %></td>
+        <td><%= annotation.description %></td>
+        <td><%= annotation.value %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

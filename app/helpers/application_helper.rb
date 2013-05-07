@@ -5,6 +5,7 @@ module ApplicationHelper
   end
 
   def link_to_go(go_name, go_id)
+    go_name ||= go_id
     link_to(go_name, "http://flybase.org/cgi-bin/cvreport.html?id=#{go_id}", :target => "_blank")
   end
 

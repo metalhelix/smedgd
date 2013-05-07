@@ -35,11 +35,11 @@ class Feature < ActiveRecord::Base
   end
 
   def self.search_go(go_term)
-    where("name LIKE ?", "%#{go_term}%").limit(100)
+    self.joins(:annotations).where("description LIKE ?", "%#{go_term}%").limit(100)
   end
 
   def self.search_homology(homology_term)
-    where("name LIKE ?", "%#{homology_term}%").limit(100)
+    self.joins(:annotations).where("description LIKE ?", "%#{go_term}%").limit(100)
   end
 
 end

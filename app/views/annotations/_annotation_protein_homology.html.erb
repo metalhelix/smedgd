@@ -1,16 +1,23 @@
 <div class="annotation_set" id="protein_homology">
-  <h3>Protein Homology</h3>
-<table class="table annotation_table">
-  <thead>
-    <tr><th>Name</th><th>Source</th><th>E-value</th><th>Description</th></tr>
-  </thead>
-  <% annotations.each do |annotation| %>
-    <tr>
-      <td><%= link_to_protein(annotation.value) %></td>
-      <td><%= (annotation.data_set) ? annotation.data_set.name : "-" %></td>
-      <td><%= annotation.score %></td>
-      <td><%= annotation.description %></td>
-    </tr>
-  <% end %>
-</table>
+  <h3><i class="icon-chevron-up"></i> Protein Homology</h3>
+  <table class="table annotation_table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Source</th>
+        <th>E-value</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% annotations.each do |annotation| %>
+        <tr>
+          <td><%= link_to_protein(annotation.value) %></td>
+          <td><%= (annotation.data_set) ? annotation.data_set.name : "-" %></td>
+          <td><%= annotation.score %></td>
+          <td><%= annotation.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

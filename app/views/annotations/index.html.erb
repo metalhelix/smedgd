@@ -1,33 +1,14 @@
-<h1>Listing annotations</h1>
-
-<table>
-  <tr>
-    <th>Gene</th>
-    <th>Type</th>
-    <th>Score</th>
-    <th>Value</th>
-    <th>Description</th>
-    <th>Source</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @annotations.each do |annotation| %>
-  <tr>
-    <td><%= annotation.gene_id %></td>
-    <td><%= annotation.type %></td>
-    <td><%= annotation.score %></td>
-    <td><%= annotation.value %></td>
-    <td><%= annotation.description %></td>
-    <td><%= annotation.source_id %></td>
-    <td><%= link_to 'Show', annotation %></td>
-    <td><%= link_to 'Edit', edit_annotation_path(annotation) %></td>
-    <td><%= link_to 'Destroy', annotation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% if !params[:search] %>
+<% else %>
+  <%= link_to 'restart', features_path, :class => 'btn' %>
+  <br/><br/>
+  <% if @annotations.size > 0 %>
+    <%= render :partial => 'annotations/go_list', :locals => {:annotations => @annotations} %>
+  <% else %>
+  <% end %>
 <% end %>
-</table>
+
 
 <br />
+<%= link_to 'restart', features_path, :class => 'btn' %>
 
-<%= link_to 'New Annotation', new_annotation_path %>

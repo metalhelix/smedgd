@@ -13,31 +13,31 @@
   </fieldset>
 <% end %>
 
-<%= form_tag features_path, :method => 'get' do %>
+<%= form_tag annotations_path, :method => 'get' do %>
   <fieldset>
     <legend>Seach By Protein Homology</legend>
     <label>Protein Homology</label>
     <%= text_field_tag :search, params[:search] %>
     <%= hidden_field_tag :search_type, 'homology' %>
-    <span class="help-block">Example: <i>???</i> </span>
+    <span class="help-block">Example: <i>Glycosyltransferase</i> </span>
     <%# <label class="checkbox">%>
     <%#   <input type="checkbox"> Check me out%>
     <%# </label>%>
-    <button type="submit" class="btn disabled">Search</button>
+    <button type="submit" class="btn">Search</button>
   </fieldset>
 <% end %>
 
-<%= form_tag features_path, :method => 'get' do %>
+<%= form_tag annotations_path, :method => 'get' do %>
   <fieldset>
     <legend>Seach By GO Term</legend>
     <label>GO Term</label>
     <%= text_field_tag :search, params[:search] %>
     <%= hidden_field_tag :search_type, 'go' %>
-    <span class="help-block">Example: <i>brain</i> </span>
+    <span class="help-block">Example: <i>membrane</i> </span>
     <%# <label class="checkbox">%>
     <%#   <input type="checkbox"> Check me out%>
     <%# </label>%>
-    <button type="submit" class="btn disabled">Search</button>
+    <button type="submit" class="btn">Search</button>
   </fieldset>
 <% end %>
 <% else %>
