@@ -1,8 +1,16 @@
 <%= link_to "smedgd", root_path, :class => 'brand', :id => 'top_logo' %>
 <ul class="nav">
-    <li>
-    <%= link_to('gbrowse', page_path('soon')) %>
-    </li>
+  <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    gbrowse
+    <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
+    <% ["SmedAsxl_v1", "SmedSxl_v4", "SmedSxl_v31"].each do |drop_name| %>
+      <li><%= link_to_gbrowse(drop_name) %></li>
+    <% end %>
+  </ul>
+  </li>
     <li>
     <%= link_to('search', features_path) %>
     </li>

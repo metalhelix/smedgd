@@ -12,4 +12,8 @@ module ApplicationHelper
   def link_to_pfam(name, id = name)
     link_to(name, "http://pfam.sanger.ac.uk/family/#{id}", :target => "_blank")
   end
+
+  def link_to_gbrowse(reference_name)
+    link_to(reference_name.gsub("_", " "), "#{root_path}/cgi-bin/gb2/gbrowse/#{reference_name}")
+  end
 end
