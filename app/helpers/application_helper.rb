@@ -14,6 +14,6 @@ module ApplicationHelper
   end
 
   def link_to_gbrowse(reference_name)
-    link_to(reference_name.gsub("_", " "), "#{root_path}/cgi-bin/gb2/gbrowse/#{reference_name}")
+    link_to(reference_name.gsub("_", " "), "/cgi-bin/gb2/gbrowse/#{reference_name}")
   end
 end
